@@ -1,0 +1,180 @@
+%------------------------------------------------
+% Style provided:  General physics symbols
+% Author: Andri M. Gretarsson
+% Last Modified: May 20, 2004
+%
+% Requires: \usepackage{amsmath}
+%           \usepackage{amsfonts}
+%           \usepackage{amssymb}
+%           \usepackage{amsthm}
+%------------------------------------------------     
+\long\def\comment#1{}
+\comment{
+
+    The following commands are defined:
+    -----------------------------------
+    \W                  use for beam width
+    \1                  add whitespace of 1pt in length
+    \0                  add whitespace of 0.5 pts in length
+    \tab                add 3ex of whitespace
+    \eqn{}              equation reference
+    \Eqn{}              equation reference at beginning of sentence
+    \fig{}              figure reference
+    \Fig{}              at beginning of sentence
+    \secn{}             section reference
+    \Secn{}             at beginning of sentence
+    \ch{}               chapter reference
+    \Ch{}               at beginning of sentence
+    \defn{}             definition reference
+    \Defn{}             at beginning of sentence
+    \appdx{}            appendix reference
+    \Appdx{}            at beginning of sentence
+    \abs                absolute value
+    \realpart           Re()
+    \equivalent         <=>
+    \hence              =>
+    \w                  omega
+    \scr                shorthand for \scriptscriptstyle{}
+    \sub                roman subscript
+    \sup                roman superscript
+    \unit               e-hat
+    \gsim               greater than or approximately equal to
+    \lsim               less than or approximately equal to
+    \e{}                times ten to the power
+    \E{}                times ten to the power
+    \mr                 mathroman (use in math mode)
+    \unitmatrix         I
+    \d                  partial derivative "curly d"
+    \nderiv{}{}{}       nth partial derivative
+    \doublederiv{}{}    2nd partial derivative
+    \deriv{}{}          1st partial derivative
+    \dd{}{}             1st partial derivative
+    \ddt{}              1st partial derivative wrt t
+    \ddx{}              1st partial derivative wrt x
+    \ddy{}              1st partial derivative wrt y
+    \ddz{}              1st partial derivative wrt z
+    \evalat{}{}         evaluate first argument at the second a|_b
+    \V{}                underline to indicate a vector
+    \grad               gradient symbol
+    \set{}              enclose argument in curly brackets
+    \R                  R for set of real numbers
+    \C                  C for set of complex numbers
+    \units              math roman font of correct size for units
+    \degrees            degree symbol
+    \micron             micrometers unit
+    \microns            micrometers unit
+    \chem{}             chemical formula
+    \Kelvin             degrees kelvin
+    \state{}            |a>
+    \dual{}             <a|
+    \op{}               font appropriate for operators
+    \opdensity{}        font appropriate for operator density
+    \ip{}{}             <a|b>
+    \opip               <A|B>
+    \T                  transpose symbol
+    \unitvec            unit vector symbol
+    \dotprod{}{}        dot product
+
+    \begin{example}     example environment
+    \end{example}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  DEFINITIONS START HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---------------------------------------
+% CONVENIENT COMMANDS AND ENVIRONMENTS
+%---------------------------------------
+
+\newcommand{\W}{\mathrm{w}}
+
+% spacing and alignment
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}
+                           {2.0 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+\newcommand{\1}{{\mbox{\hspace{1pt}}}}
+\newcommand{\0}{{\mbox{\hspace{0.5pt}}}}
+\newcommand{\tab}{\hbox{\hspace{3ex}}}
+
+%\citation
+\newcommand{\eqn}[1]{Eq.~(\ref{#1})}
+\newcommand{\Eqn}[1]{Equation~(\ref{#1})}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\Fig}[1]{Figure~\ref{#1}}
+\newcommand{\secn}[1]{Section~\ref{#1}}
+\newcommand{\Secn}[1]{Section~\ref{#1}}
+\newcommand{\ch}[1]{Chapter~\ref{#1}}
+\newcommand{\Ch}[1]{Chapter~\ref{#1}}
+\newcommand{\defn}[1]{definition~\ref{#1}}
+\newcommand{\Defn}[1]{Definition~\ref{#1}}
+\newcommand{\appdx}[1]{Appendix~\ref{#1}}
+\newcommand{\Appdx}[1]{Appendix~\ref{#1}}
+
+%General Math Symbols and Fonts
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\realpart}[1]{\,\mathrm{Re}\!\left\{#1\right\}}
+\newcommand{\equivalent}{\Leftrightarrow}
+\newcommand{\hence}{\Rightarrow}
+\newcommand{\w}{\omega}
+\newcommand{\scr}[1]{{\scriptscriptstyle{#1}}}
+\newcommand{\sub}[1]{_{\mathrm{#1}}}
+\renewcommand{\sup}[1]{^{\mathrm{#1}}}
+\newcommand{\unit}[1]{\hat{e}_{#1}}
+\newcommand{\lsim}{\;\mbox{\raisebox{-0.5ex}{$\stackrel{<}{\scriptstyle{\sim}}$}}\;}
+\newcommand{\gsim}{\;\mbox{\raisebox{-0.5ex}{$\stackrel{>}{\scriptstyle{\sim}}$}}\;}
+\newcommand{\propsim}
+            {\;\mbox{\raisebox{-0.5ex}{$\stackrel{\propto}{\scriptstyle{\sim}}$}}\;}
+\newcommand{\e}[1]{\times 10^{#1}}
+\newcommand{\E}[1]{\times 10^{#1}}
+\newcommand{\of}[1]{(#1)}
+\newcommand{\mr}[1]{{\mathrm{#1}}}
+\newcommand{\avg}[1]{\langle #1 \rangle}
+%Matrixes
+\newcommand{\unitmatrix}{{\mathbf 1}}
+
+%Derivatives
+\renewcommand{\d}{\partial}
+\newcommand{\nderiv}[3]{\frac{\d^{#1} #2}{\d #3^{#1}}}
+\newcommand{\doublederiv}[2]{\nderiv{2}{#1}{#2}}
+\newcommand{\deriv}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\dd}[2]{\frac{{d\0}{#1}}{{d\0}{#2}}}
+\newcommand{\ddt}[1]{\deriv{#1}{t}}
+\newcommand{\ddx}[1]{\deriv{#1}{x}}
+\newcommand{\ddy}[1]{\deriv{#1}{y}}
+\newcommand{\ddz}[1]{\deriv{#1}{z}}
+\newcommand{\evalat}[1]{\raisebox{-4pt}{$\big|$\raisebox{-3.3pt}{${\scriptstyle{#1}}$}}}
+
+%Vector Calculus
+%\newcommand{\V}[1]{\mbox{ \raisebox{-0.24ex}{${\_}$} \hspace{-2.18ex} $#1$}}
+\newcommand{\V}[1]{\underline{#1}}
+\newcommand{\grad}{\bigtriangledown}
+
+%Sets
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+
+%General Physics
+\newcommand{\units}[1]{\mathrm{\scriptstyle{#1}}}
+\newcommand{\degrees}{\mbox{$^\circ$}}
+\newcommand{\micron}{\mu\mathrm{m}}
+\newcommand{\microns}{\mu\mathrm{m}}
+\newcommand{\chem}[1]{$\mathrm{#1}$}
+\newcommand{\Kelvin}{\mathrm{^\circ K}}
+
+%Linear Algebra in QT format
+\newcommand{\state}[1]{|{\mathbf{#1}}\!\!>}
+\newcommand{\dual}[1]{<\!\!{{\mathbf{#1}}}|}
+\newcommand{\op}[1]{\mathbf{#1}}
+\newcommand{\opdensity}[1]{{\mathbf{#1}}}
+\newcommand{\ip}[2]{\left\langle{#1}|{#2}\right\rangle}
+\newcommand{\opip}[2]{\ip{\mathbf{#1}}{\mathbf{#2}}}
+\newcommand{\T}{{}^{\dagger}}
+\newcommand{\unitvec}[1]{\V{{\hat{#1}}}}
+
+
+%ENVIRONMENT DEFINITIONS
+\newtheorem{example}{Example}

@@ -1,0 +1,26 @@
+\documentclass{minimal}
+\usepackage{fixltx2e}
+\usepackage{lmodern}
+\usepackage[LGR,T1]{fontenc}
+\usepackage{amstext}
+
+\usepackage{isomath}
+
+% from babel:
+\providecommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}%
+}
+
+\providecommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+
+\newcommand{\gVec}[1]{\text{\greektext\bfseries #1}}
+
+\begin{document}
+
+With this, $\mathbf{abc}\gVec{abg}$ prints all characters in upright
+bold.
+
+Also in  $\frac{a\gVec{a}}{b\gVec{b}}$ or
+$\mathrm{e}^{\gVec{f}\mathbf{t}}$.
+
+\end{document} 

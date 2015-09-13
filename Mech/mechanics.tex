@@ -1,0 +1,42 @@
+%        File: mechanics.tex
+%     Created: Sal Eyl 07 02:00 ÖÖ 2010 E
+% Last Change: Sal Eyl 07 02:00 ÖÖ 2010 E
+%
+\documentclass[a4paper]{article}
+\usepackage{xkeyval}
+\usepackage[turkish]{babel}
+\usepackage[latin5]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc} %utf8 kodlamas¿
+%\AtBeginDocument{\shorthandoff{=}}% right after babel. It is same as kvsetkeys
+\usepackage{kvsetkeys} % to get rid of error due to babel and graphicx package 
+\let\setkeys\kvsetkeys % to get rid of error due to babel and graphicx package 
+%\uccode`\i='235 % \MakeUppercase{ijk} sorunu halletmek için
+%\lccode`\I='031
+%%latex ba¿l¿klar¿nda  metinlerde "i"
+%%karakterini "\.{¿}" ¿eklinde yaz.
+\usepackage{graphicx}
+\usepackage[overload]{textcase}%latex'in babel ve math üzerindeki sorunlar için
+%\AtBeginDocument{\shorthandon{=}} % right before \begin{document}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\newtheoremstyle{example}{\topsep}{\topsep}%
+     {}%         Body font
+     {}%         Indent amount (empty = no indent, \parindent = para indent)
+     {\bfseries}% Thm head font
+     {}%        Punctuation after thm head
+     {\newline}%     Space after thm head (\newline = linebreak)
+     {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}%         Thm head spec
+
+   \theoremstyle{example}
+   \newtheorem{example}{Örnek}[section]
+   \input{wtk_cmmds.sty}
+\begin{document}
+ieakiumek
+\section{Ýki Cisim Problemi}
+\begin{example}[Gezegenlerin Haraketi]
+
+  $\ihat$ \E{3} \avg{K}
+\end{example}
+\end{document}
+
+
